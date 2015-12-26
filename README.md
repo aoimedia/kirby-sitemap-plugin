@@ -13,7 +13,7 @@ site/
 ```
 
 ## Usage
-Open `http://yourwebsite.com/sitemap.xml` to see the XML sitemap.
+Open `http://yourwebsite.com/sitemap.xml` to see the sitemap. (You might need to open the dev tools in your browser to view the actual xml code.)
 
 
 
