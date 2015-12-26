@@ -19,9 +19,9 @@ kirby()->routes(array(
           $sitemap .= '<loc>' . html($p->url()) . '</loc>' . "\n";
 
           if (kirby()->site()->languages() && kirby()->site()->languages()->count() > 1) {
-            foreach (site()->languages() as $language) {
+            foreach (kirby()->site()->languages() as $language) {
               $code = $language->code();
-              if ($code != site()->defaultLanguage()->code()) {
+              if ($code != kirby()->site()->defaultLanguage()->code()) {
                 $sitemap .= '<xhtml:link rel="alternate" hreflang="' . $code . '" href="' . $p->url($code) . '" />' . "\n"; 
               }
             }
