@@ -10,7 +10,6 @@ kirby()->routes(array(
 	array(
 		'pattern' => 'sitemap.xml',
 		'action'  => function() {
-
 			$sitemap = '<?xml version="1.0" encoding="utf-8"?>'. "\n" .'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'. "\n";
 
 			$excluded = kirby()->site()->pages()->index()->filterBy('template', 'in', ['error']);
