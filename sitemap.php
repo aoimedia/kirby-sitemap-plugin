@@ -14,7 +14,13 @@ kirby()->routes(array(
 			$sitemap = '<?xml version="1.0" encoding="utf-8"?>'. "\n" .'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'. "\n";
 
 			$excluded = kirby()->site()->pages()->index()->filterBy('template', 'in', ['error']);
-			$pages = kirby()->site()->pages()->index()->visible()->not($excluded);
+			$pages = kirby()->site()->pages()->index()->visible()->not($excluded)->filter(function($child) {
+				$countParents = $child->parents()->count();
+				$countVisibleParents = $child->parents()->visible()->count();
+				if($countParents == $countVisibleParents) {
+					return $child;
+				}
+			});
 
 			foreach($pages as $p) {
 				$sitemap .= '<url>' . "\n";
