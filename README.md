@@ -7,13 +7,10 @@ If your Kirby site has multiple languages, the plugin creates the appropriate `<
 ## Installation
 ```
 site/
-	plugins/
-		sitemap/
-			sitemap.php
+  plugins/
+    sitemap/
+      sitemap.php
 ```
 
 ## Usage
 Open `http://yourwebsite.com/sitemap.xml` to see the sitemap. (You might need to open the dev tools in your browser to view the actual XML code.)
-
-
-
